@@ -1,0 +1,26 @@
+{
+    "name": "fog3211",
+    "short_name": "任庆忠",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#2196f3",
+    "description": "任庆忠的个人博客",
+    "theme_color": "#FFCC33",
+    "icons": [
+      {
+        "src": "./favicon.ico",
+        "sizes": "32x32",
+        "type": "image/x-icon"
+      }
+    ],
+    "related_applications": [
+      {
+        "platform": "web",
+        "url": ""
+      },
+      {
+        "platform": "play",
+        "url": "https://play.google.com/store/apps/details?id=cheeaun.hackerweb"
+      }
+    ]
+  }
