@@ -6,13 +6,8 @@ module.exports = {
             rel: 'shortcut icon',
             type: "image/x-icon",
             href: `/favicon.ico`
-        }],
-        ['link', {
-            rel: 'manifest',
-            href: '/manifest.json'
-        }],
+        }]
     ],
-    serviceWorker: true,
     themeConfig: {
         nav: [{
                 text: 'Home',
@@ -23,10 +18,6 @@ module.exports = {
                 items: [{
                         text: 'javascript',
                         link: '/javascript/'
-                    },
-                    {
-                        text: 'CSS',
-                        link: '/css/'
                     }, {
                         text: 'vue',
                         link: '/vue/'
@@ -43,33 +34,11 @@ module.exports = {
             },
         ],
         sidebar: {
-            '/vue/': genSidebarConfig('vue')
-        },
-        sidebarDepth: 2,
-        lastUpdated: 'Last Updated',
+            '/vue/': [
+                 '',
+                 'second'
+            ]
+        }
     },
-}
-
-// function genSidebarConfig(title) {
-//     return [{
-//         title,
-//         collapsable: false,
-//         children: [
-//             ['/javascript/js-1', '第一篇文章'],
-//             ['/javascript/js-2', '第二篇文章'],
-//         ]
-//     }]
-// }
-
-
-
-function genSidebarConfig(title) {
-    return [{
-        title,
-        collapsable: false,
-        children: [
-            '',
-            'second'
-        ]
-    }]
+    serviceWorker: true,
 }

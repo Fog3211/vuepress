@@ -1,4 +1,7 @@
 ---
-title:resume
+title: resume
+sidebar: auto
 ---
-啦啦啦简历啦
+
+# 这是简历部分
+   
