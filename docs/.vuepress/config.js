@@ -1,8 +1,6 @@
 module.exports = {
     title: 'fog3211',
     description: '任庆忠的博客',
-    // base:"/vuepress/",
-    // base:"/",
     head: [
         ['link', {
             rel: 'shortcut icon',
@@ -46,7 +44,7 @@ module.exports = {
         ],
         sidebar: {
             // '/javascript/': genSidebarConfig("javascript"),
-            '/vue/': genSidebarConfig('指南')
+            '/vue/': genSidebarConfig('vue')
         },
         sidebarDepth: 2,
         lastUpdated: 'Last Updated',
@@ -72,6 +70,7 @@ function genSidebarConfig(title) {
         collapsable: false,
         children: [
             '',
+            'ss'
         ]
     }]
 }

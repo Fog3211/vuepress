@@ -12,7 +12,5 @@
   "keywords": [],
   "author": "fog3211",
   "license": "MIT",
-  "devDependencies": {
-    "vuepress": "^0.14.4"
-  }
+  "devDependencies": {}
 }
