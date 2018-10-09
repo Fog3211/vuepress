@@ -43,7 +43,6 @@ module.exports = {
             },
         ],
         sidebar: {
-            // '/javascript/': genSidebarConfig("javascript"),
             '/vue/': genSidebarConfig('vue')
         },
         sidebarDepth: 2,
@@ -70,7 +69,7 @@ function genSidebarConfig(title) {
         collapsable: false,
         children: [
             '',
-            'ss'
+            'second'
         ]
     }]
 }

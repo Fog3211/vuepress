@@ -36,7 +36,7 @@ node -v
 npm install -g vuepress  
 ```
 
-首先创建一个项目文件夹，这里我起名```vuepress```，使用cd命令进入该项目  
+首先创建一个项目文件夹，这里我起名`vuepress`，使用cd命令进入该项目  
 
 初始化项目  
 ``` bash
@@ -59,18 +59,18 @@ npm install -D vuepress
 mkdir docs
 ```
 
-在```package.json```中添加  
-``` bash
+在`package.json`中添加  
+``` json
 {
 "scripts": {
-    "dev": "vuepress dev docs", #运行本地服务
-    "build": "vuepress build docs", #打包生成静态文件
+    "dev": "vuepress dev docs", //运行本地服务
+    "build": "vuepress build docs", //打包生成静态文件
   }
 }
 ```
 
-进入docs文件夹并创建一个叫```.vuepress```的文件夹,   ```.vuepress```目录主要用于存放vuepress相关的文件。     
-在```.vuepress```文件夹下创建```public```文件夹，用以存放静态资源文件。  
+进入docs文件夹并创建一个叫`.vuepress`的文件夹,   `.vuepress`目录主要用于存放vuepress相关的文件。     
+在`.vuepress`文件夹下创建`public`文件夹，用以存放静态资源文件。  
 创建config.js文件，用来配置vuepress。  
 
 ``` bash
@@ -86,7 +86,7 @@ touch config.js
 在docs文件夹下创建一个README.md文件，这个markdown文件会被渲染成静态html，用来做Blog展示的首页。  
 
 此时项目目录应该是这样的  
-```
+``` 
 .
 vuepress
 ├─── docs
@@ -102,7 +102,7 @@ vuepress
 
 #### 网站信息  
   首先在config.js文件里添加  
-``` bash
+``` js
 module.exports = {
   title: 'Hello VuePress',
   description: 'My Blog',
@@ -117,8 +117,8 @@ module.exports = {
 ```  
 #### 默认主题配置（Blog首页）  
 
-向docs文件夹下的README.md文件添加  
-``` bash
+docs文件夹下的README.md文件  
+``` yaml
 ---
 home: true
 heroImage: /head.jpg
@@ -128,9 +128,11 @@ footer: MIT Licensed | Copyright © 2018-present Fog3211
 ---
 ```  
 
-#### 导航栏配置   
+#### 导航栏配置  
 
-```bash
+config.js文件  
+
+```js
 module.exports = {
     themeConfig: {
         nav: [{
@@ -166,7 +168,67 @@ module.exports = {
 
 ::: tip
 其中导航栏配置的路由要在docs文件下建立对应的文件夹，并在每个文件夹下都要有一个README.md文件。
-:::
+:::  
 
+此时项目结构为  
+
+``` 
+.
+├── docs
+│   ├── .vuepress 
+│   │     │── public 
+│   │     │      │── favicon.ico
+│   │     │      └── head.jpg
+│   │     │ 
+│   │     └── config.js
+│   │
+│   ├── resume
+│   │    └── README.md
+│   │ 
+│   ├── javascript
+│   │      └── README.md
+│   │ 
+│   ├── vue
+│   │    └── README.md
+│   │ 
+│   └── README.md
+│   
+└── package.json
+
+
+```
+
+现在博客主页面的导航栏已经实现跳转，使用如下命令即可在`http://localhost:8080`下查看效果
+```bash
+npm run dev
+```
+
+我的博客截图  
+
+![avatar](/pic1.png)  
+
+#### 主题颜色更改 
+
+可以创建一个 `.vuepress/override.styl` 文件覆盖原有主题颜色  
+``` stylus
+$accentColor = #3eaf7c // 主题色
+$textColor = #2c3e50 // 文字颜色
+$borderColor = #eaecef // 边框颜色
+$codeBgColor = #282c34 // 代码背景颜色
+```
+
+#### 侧边栏配置  
+
+侧边栏的配置也在`.vuepress/config.js`中  
+
+``` js
+ sidebar: {
+            '/vue/': [
+                 '',
+                 'second'
+                //如果有其他博文，在相对应的文件夹下新建md文件并在此处添加路由即可
+            ]
+        }
+```
 其他详细配置部分参考[官方文档](https://www.vuepress.cn/guide/basic-config.html)
  
