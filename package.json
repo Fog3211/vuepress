@@ -1,5 +1,5 @@
 {
-  "name": "vuepress",
+  "name": "myblog",
   "version": "1.0.0",
   "description": "vuepress blog",
   "main": "index.js",
@@ -11,5 +11,8 @@
   },
   "keywords": [],
   "author": "fog3211",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^0.14.4"
+  }
 }
